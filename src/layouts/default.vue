@@ -1,10 +1,7 @@
 <template>
   <div class="w-screen h-screen bg-background">
     <TIMenu :model="menuModel"/>
-
-    <div class="px-2xl py-xl">
-      <Nuxt/>
-    </div>
+    <Nuxt/>
   </div>
 </template>
 

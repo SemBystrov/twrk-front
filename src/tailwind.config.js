@@ -68,6 +68,11 @@ module.exports = {
                 xl     : "4rem",
                 "2xl"  : "10rem"
             }
+        },
+        extend: {
+            boxShadow: {
+                'custom': '0 2px 10px 0 rgba(0, 0, 0, 0.15)',
+            }
         }
     },
     variants: {

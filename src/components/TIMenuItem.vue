@@ -1,12 +1,19 @@
 <template>
-  <div/>
+  <NuxtLink
+    :to="path"
+    class="px-4 first:pl-0 font-medium text-12 leading-none"
+    :class="path !== $route.path? 'text-text-gray-500': 'text-text-gray-700'"
+  >
+    {{label}}
+  </NuxtLink>
 </template>
 
 <script>
 export default {
-  data: () => ({}),
-
-  computed: {}
+  props: {
+    label: String,
+    path: String
+  }
 }
 </script>
 

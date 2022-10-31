@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="rounded-2xl w-full flex justify-center">
     <slot/>
   </div>
 </template>

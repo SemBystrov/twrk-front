@@ -1,5 +1,5 @@
 <template>
-  <TIBanner>
+  <TIBanner class="bg-secondary">
     <div>
       <p>
         Нужна помощь? <br>Мы поможем! Просто свяжитесь с нами.
