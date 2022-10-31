@@ -1,12 +1,23 @@
 <template>
-  <div/>
+  <div>
+    <label :for="id">{{label}}</label>
+    <input
+      :value="value"
+      type="number"
+      @input="$emit('input', $event.target.value)"
+      :id="id"
+    />
+  </div>
 </template>
 
 <script>
-export default {
-  data: () => ({}),
+import {TIInputLabelMixin} from "~/mixins/TIInputLabelMixin";
 
-  computed: {}
+export default {
+  mixins: [TIInputLabelMixin],
+  props: {
+    value: [Number]
+  }
 }
 </script>
 
