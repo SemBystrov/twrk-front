@@ -5,17 +5,15 @@
       Также не добавляю в layouts заголовок, так как на реальном проекте, при развитии продукта
       могут возникнуть проблемы
     -->
-    <h1>Валютный калькулятор</h1>
+    <h1>Курс рубля</h1>
 
     <div>
-      <div>
-        <TheCalculate/>
-        <TheSumBanner/>
-      </div>
-      <TheLoremIpsumBanner/>
+      <TheCurrencyBanner/>
+      <TheCurrencyBanner/>
+      <TheCurrencyBanner/>
     </div>
 
-    <TheHelpBanner/>
+    <TheContactBanner/>
   </div>
 </template>
 

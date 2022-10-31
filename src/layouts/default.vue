@@ -1,37 +1,30 @@
 <template>
-    <div>
-        <Nuxt />
+  <div class="w-screen h-screen bg-background">
+    <TIMenu :model="menuModel"/>
+
+    <div class="px-2xl py-xl">
+      <Nuxt/>
     </div>
+  </div>
 </template>
 
 <script>
-export default {}
+export default {
+  data: () => ({
+    menuModel: [
+      {
+        label: "Калькулятор",
+        path: "/"
+      },
+      {
+        label: "Курс рубля",
+        path: "/rates"
+      }
+    ]
+  })
+}
 </script>
 
 <style lang="scss">
-button,
-input,
-optgroup,
-select,
-textarea {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-}
-
-html {
-    font-size: 12px;
-}
-
-body {
-    @apply font-roboto text-text-main;
-    font-size: 1.4rem;
-    overflow-x: hidden;
-    -ms-text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    -webkit-tap-highlight-color: transparent;
-}
 
 </style>
