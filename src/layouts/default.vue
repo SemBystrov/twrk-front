@@ -21,7 +21,11 @@ export default {
         path: "/rates"
       }
     ]
-  })
+  }),
+
+  async fetch () {
+    await this.$store.dispatch('currency/fetchCurrency')
+  }
 }
 </script>
 

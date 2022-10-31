@@ -8,9 +8,11 @@
     <h1>Курс рубля</h1>
 
     <div>
-      <TheCurrencyBanner/>
-      <TheCurrencyBanner/>
-      <TheCurrencyBanner/>
+      <TheCurrencyBanner
+        v-for="currency in this.$store.getters['currency/getCurrency']"
+        :key="`currency-${currency.charCode}`"
+        :currency="currency"
+      />
     </div>
 
     <TheContactBanner/>

@@ -10,7 +10,6 @@
     <div>
       <div>
         <TheCalculate/>
-        <TheSumBanner/>
       </div>
       <TheLoremIpsumBanner/>
     </div>
