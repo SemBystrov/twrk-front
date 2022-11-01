@@ -1,5 +1,5 @@
 <template>
-  <div class="w-screen h-screen bg-background font-roboto leading-none">
+  <div class="w-screen h-screen overflow-x-hidden bg-background font-roboto leading-none">
     <TIMenu :model="menuModel"/>
     <Nuxt/>
   </div>
