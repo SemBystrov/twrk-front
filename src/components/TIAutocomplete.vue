@@ -18,12 +18,12 @@
     <transition>
       <ul
         v-if="options !== null && showOptionsModel"
-        class="absolute rounded-[5px] w-full shadow-lorem select-none bg-gray top-[96px] 2xl:top-[100px] z-10"
+        class="absolute rounded-[5px] w-full shadow-lorem select-none bg-gray top-[86px] 2xl:top-[90px] z-10"
       >
         <li
           v-for="option in options"
           :key="`${id}-option-${option.charCode}`"
-          class="px-4 py-1 hover:bg-secondary cursor-pointer"
+          class="px-4 py-2 hover:bg-secondary cursor-pointer"
           @mousedown="select(option)"
         >
           <span class="font-bold">{{option.charCode}}</span> - {{option.name}}
