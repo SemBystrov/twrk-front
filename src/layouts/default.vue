@@ -1,5 +1,5 @@
 <template>
-  <div class="w-screen h-screen bg-background">
+  <div class="w-screen h-screen bg-background font-roboto">
     <TIMenu :model="menuModel"/>
     <Nuxt/>
   </div>
@@ -25,7 +25,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss">
-
-</style>

@@ -1,21 +1,30 @@
 <template>
   <div class="relative flex flex-col">
-    <label :for="id">{{label}}</label>
+    <label
+      :for="id"
+      class="text-14 2xl:text-16 font-medium text-text-dark"
+    >
+      {{label}}
+    </label>
     <input
       v-model="model"
       :id="id"
-      @focus="showOptions = true"
+      @focusin="showOptions"
+      @focusout="hiddenOptions"
+      @input="updateValue"
+      class="mt-3 border border-border-gray rounded-[5px] p-5 text-12 2xl:text-14"
+      placeholder="Введите название или код"
     />
     <transition>
       <ul
-        v-if="options !== null && showOptions"
-        class="absolute bg-gray top-12 z-10"
+        v-if="options !== null && showOptionsModel"
+        class="absolute rounded-[5px] w-full shadow-lorem select-none bg-gray top-[96px] 2xl:top-[100px] z-10"
       >
         <li
           v-for="option in options"
           :key="`${id}-option-${option.charCode}`"
-          class="px-4 py-1"
-          @click="select(option)"
+          class="px-4 py-1 hover:bg-secondary cursor-pointer"
+          @mousedown="select(option)"
         >
           <span class="font-bold">{{option.charCode}}</span> - {{option.name}}
         </li>
@@ -26,24 +35,31 @@
 
 <script>
 import {TIInputLabelMixin} from "~/mixins/TIInputLabelMixin";
-import Currency from "~/classes/Currency";
-/*
-  Сделал перерыв в разработке, отвлекли
- */
+
 export default {
   mixins: [TIInputLabelMixin],
   props: {
-    value: [Currency, null]
+    value: [Object, null]
   },
   data: () => ({
     model: "",
-    showOptions: true
+    showOptionsModel: true
   }),
   methods: {
     select (option) {
       this.model = option.charCode
       this.$emit("input", option)
-      this.showOptions = false
+      this.hiddenOptions()
+    },
+    showOptions () {
+      this.showOptionsModel = true
+    },
+    hiddenOptions () {
+      this.showOptionsModel = false
+    },
+    updateValue () {
+      const currency = this.$store.getters["currency/getCurrency"].find((item) => item.charCode === this.model)
+      this.$emit("input", currency? currency : null)
     }
   },
   computed: {
@@ -63,7 +79,6 @@ export default {
 </script>
 
 <style scoped lang="css">
-/* we will explain what these classes do next! */
 .v-enter-active,
 .v-leave-active {
   transition: opacity 0.5s ease;
