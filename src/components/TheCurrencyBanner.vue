@@ -18,7 +18,9 @@
       <h2 class="font-bold text-primary text-17 md:text-18 xl:text-20 mt-[23px] md:mt-9 xl:mt-8 2xl:mt-[37px]">{{currency.charCode}}</h2>
       <p class="mt-[22px] md:mt-[30px] text-14 xl:text-15 2xl:text-16 text-text-gray-950">{{currency.name}}</p>
 
-      <TIList :model="listModel"/>
+      <TIList
+        class="text-14 xl:text-15 2xl:text-16 space-y-4 mt-7 md:mt-10 md:space-y-5 font-medium text-text-gray-900"
+        :model="listModel"/>
     </template>
   </TIBanner>
 </template>

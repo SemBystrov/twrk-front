@@ -17,7 +17,7 @@ export default {
   },
 
   computed: {
-    sumView: ({sum}) => sum === null? '...': sum
+    sumView: ({sum}) => sum === null? '...': sum.toFixed(2)
   }
 }
 </script>

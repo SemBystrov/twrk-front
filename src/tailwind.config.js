@@ -78,11 +78,16 @@ module.exports = {
             boxShadow: {
                 custom: '0 2px 10px 0 rgba(0, 0, 0, 0.15)',
                 lorem: '0 0 20px rgba(239, 239, 239, 0.5)'
+            },
+            padding: {
+                full: '100%',
             }
         }
     },
     variants: {
         extend: {}
     },
-    plugins: []
+    plugins: [
+        require('@tailwindcss/aspect-ratio')
+    ]
 }
